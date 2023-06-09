@@ -152,10 +152,6 @@ def main_flow(
     # Train
     train_best_model(X_train, X_val, y_train, y_val, dv)
 
-
-if __name__ == "__main__":
-    main_flow()
-
     email_server_credentials = EmailServerCredentials.load("email-test")
 
     email_send_message(
@@ -164,3 +160,9 @@ if __name__ == "__main__":
         msg=f"Flow run is completed. Congrats!",
         email_to=email_server_credentials.username,
     )
+
+
+if __name__ == "__main__":
+    main_flow()
+
+
