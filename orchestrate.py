@@ -11,7 +11,8 @@ import xgboost as xgb
 from prefect import flow, task
 from prefect.artifacts import create_markdown_artifact
 from datetime import date
-from prefect_email import EmailServerCredentials
+from prefect_email import EmailServerCredentials, email_send_message
+
 
 @task(retries=3, retry_delay_seconds=2)
 def read_data(filename: str) -> pd.DataFrame:
